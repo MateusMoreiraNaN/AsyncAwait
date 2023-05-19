@@ -27,3 +27,18 @@ const getVideoDetails = (video)=>{
         }, 2500)
     })
 }
+
+const displayUser = async ()=>{
+    try{
+        const user = await loginUser('mateusteste@gmail.com', '123456')
+        const videos = await getUserVideos(user.email)
+        const videosDetails = await getUserVideos(videos[0])
+
+        //console.log({ videos });
+        console.log({ videosDetails });
+    }catch(error){
+
+    }
+}
+
+displayUser()
